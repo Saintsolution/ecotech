@@ -30,8 +30,8 @@ const dieselProducts = [
 ];
 
 const ProductsDieselPage = () => (
-  <main>
-    {/* Hero Banner */}
+  <main className="bg-background">
+    {/* 1. Hero Banner - PRETO */}
     <section className="bg-surface-dark py-20">
       <div className="container max-w-4xl text-center">
         <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1 font-heading text-xs font-semibold tracking-wider text-primary">
@@ -47,10 +47,10 @@ const ProductsDieselPage = () => (
       </div>
     </section>
 
-    {/* Problem / Pain Point */}
-    <section className="py-16">
+    {/* 2. Problem / Pain Point - VERDE PASTEL */}
+    <section className="py-16 bg-[#e8f5e9]">
       <div className="container max-w-4xl">
-        <div className="rounded-2xl border border-destructive/20 bg-destructive/5 p-8 md:p-10">
+        <div className="rounded-2xl border border-destructive/20 bg-destructive/5 p-8 md:p-10 shadow-sm">
           <div className="mb-6 flex items-center gap-3">
             <AlertTriangle className="h-8 w-8 text-destructive" />
             <h2 className="font-heading text-2xl font-bold text-foreground">O Problema é Silencioso</h2>
@@ -58,14 +58,14 @@ const ProductsDieselPage = () => (
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <p className="mb-4 font-body text-foreground leading-relaxed">
-                Água no diesel é o <strong>inimigo número 1</strong> dos motores modernos com sistema common rail. Os bicos injetores trabalham com pressões de até 2.000 bar — qualquer gota de água causa:
+                Água no diesel é o <strong>inimigo número 1</strong> dos motores modernos. Os bicos injetores trabalham com pressões altíssimas — qualquer gota de água causa:
               </p>
               <ul className="space-y-2">
                 {[
-                  "Corrosão interna dos bicos injetores (reparo: R$ 3.000+)",
+                  "Corrosão interna dos bicos (reparo: R$ 3.000+)",
                   "Falha da bomba de alta pressão (reparo: R$ 8.000+)",
                   "Perda de potência e aumento de fumaça",
-                  "Paradas não programadas e lucro cessante",
+                  "Paradas não programadas e prejuízo diário",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 font-body text-sm text-muted-foreground">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />
@@ -74,7 +74,7 @@ const ProductsDieselPage = () => (
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col justify-center rounded-xl bg-card p-6 text-center">
+            <div className="flex flex-col justify-center rounded-xl bg-white p-6 text-center border border-border/50 shadow-inner">
               <Wrench className="mx-auto mb-2 h-8 w-8 text-destructive" />
               <span className="font-heading text-4xl font-bold text-destructive">R$ 11.000+</span>
               <span className="mt-1 font-body text-sm text-muted-foreground">custo médio de reparo por água no diesel</span>
@@ -87,33 +87,33 @@ const ProductsDieselPage = () => (
       </div>
     </section>
 
-    {/* Solution */}
-    <section className="bg-muted py-16">
+    {/* 3. Solution - VERDE ESCURO */}
+    <section className="!bg-[#1b4332] py-16">
       <div className="container max-w-4xl">
-        <h2 className="mb-2 text-center font-heading text-3xl font-bold text-foreground">
+        <h2 className="mb-2 text-center font-heading text-3xl font-bold text-white">
           A Blindagem que seu Diesel <span className="text-gradient-emerald">Precisa</span>
         </h2>
-        <p className="mx-auto mb-10 max-w-xl text-center font-body text-muted-foreground">
+        <p className="mx-auto mb-10 max-w-xl text-center font-body text-emerald-50">
           Tecnologia HARCAP: 99,9% da água é separada antes de chegar ao motor.
         </p>
         <div className="grid gap-6 sm:grid-cols-3">
           {[
-            { icon: Droplets, title: "99,9% Separação", desc: "A água é removida com eficiência quase total, protegendo bicos injetores e bomba de alta pressão de corrosão e cavitação." },
-            { icon: Shield, title: "5 Micras de Filtragem", desc: "Partículas microscópicas de sujeira são retidas, garantindo que apenas diesel ultra-limpo alimente o sistema common rail." },
-            { icon: Gauge, title: "60.000 km de Proteção", desc: "Um único filtro HARCAP substitui 6 trocas de filtros convencionais. Menos paradas, menos custos, mais produtividade." },
+            { icon: Droplets, title: "99,9% Separação", desc: "A água é removida com eficiência total, protegendo bicos e bomba de corrosão." },
+            { icon: Shield, title: "5 Micras de Filtragem", desc: "Garante que apenas diesel ultra-limpo alimente o sistema common rail." },
+            { icon: Gauge, title: "60.000 km Úteis", desc: "Substitui 6 trocas de filtros convencionais. Menos paradas, mais lucro." },
           ].map((item, i) => (
-            <div key={i} className="rounded-xl border border-border bg-card p-6 text-center">
+            <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-sm">
               <item.icon className="mx-auto mb-3 h-10 w-10 text-primary" />
-              <h3 className="mb-2 font-heading text-lg font-bold text-foreground">{item.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <h3 className="mb-2 font-heading text-lg font-bold text-white">{item.title}</h3>
+              <p className="font-body text-sm text-emerald-100/80 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* ROI Calculator */}
-    <section className="py-16">
+    {/* 4. ROI Calculator - BRANCO */}
+    <section className="py-16 bg-white">
       <div className="container max-w-3xl">
         <h2 className="mb-8 text-center font-heading text-3xl font-bold text-foreground">
           Faça as Contas: <span className="text-gradient-emerald">Quanto Você Economiza?</span>
@@ -125,7 +125,6 @@ const ProductsDieselPage = () => (
               <li>6 trocas de filtro × R$ 120 = <strong className="text-foreground">R$ 720</strong></li>
               <li>Risco de reparo de injetores = <strong className="text-foreground">R$ 3.000+</strong></li>
               <li>Risco de bomba de alta = <strong className="text-foreground">R$ 8.000+</strong></li>
-              <li>Paradas não programadas = <strong className="text-foreground">Lucro cessante</strong></li>
             </ul>
             <div className="mt-4 border-t border-border pt-3">
               <span className="font-heading text-xl font-bold text-destructive">Risco: R$ 11.720+/ano</span>
@@ -137,7 +136,6 @@ const ProductsDieselPage = () => (
               <li>1 filtro HARCAP = <strong>R$ 459,90</strong></li>
               <li>Proteção total de injetores = <strong className="text-primary">R$ 0 em reparos</strong></li>
               <li>Proteção total da bomba = <strong className="text-primary">R$ 0 em reparos</strong></li>
-              <li>Zero paradas por diesel contaminado</li>
             </ul>
             <div className="mt-4 border-t border-primary/20 pt-3">
               <span className="font-heading text-xl font-bold text-primary">Investimento: R$ 459,90/ano</span>
@@ -150,19 +148,19 @@ const ProductsDieselPage = () => (
       </div>
     </section>
 
-    {/* Comparison Table */}
-    <section className="bg-muted py-16">
+    {/* 5. Comparison Table - VERDE ESCURO NO TOPO */}
+    <section className="bg-[#f8fafc] py-16">
       <div className="container max-w-3xl">
         <h2 className="mb-8 text-center font-heading text-3xl font-bold text-foreground">
           Comparativo Técnico
         </h2>
-        <div className="overflow-hidden rounded-xl border border-border">
+        <div className="overflow-hidden rounded-xl border border-border shadow-md">
           <table className="w-full">
-            <thead className="bg-primary">
+            <thead className="bg-[#1b4332]">
               <tr>
-                <th className="px-4 py-3 text-left font-heading text-sm font-bold text-primary-foreground">Característica</th>
-                <th className="px-4 py-3 text-center font-heading text-sm font-bold text-primary-foreground">HARCAP</th>
-                <th className="px-4 py-3 text-center font-heading text-sm font-bold text-muted">Convencional</th>
+                <th className="px-4 py-3 text-left font-heading text-sm font-bold text-white">Característica</th>
+                <th className="px-4 py-3 text-center font-heading text-sm font-bold text-white">HARCAP</th>
+                <th className="px-4 py-3 text-center font-heading text-sm font-bold text-emerald-200">Convencional</th>
               </tr>
             </thead>
             <tbody>
@@ -173,7 +171,7 @@ const ProductsDieselPage = () => (
                 ["Proteção common rail", "Total", "Parcial"],
                 ["Custo por km rodado", "R$ 0,007", "R$ 0,072"],
               ].map(([feat, harcap, conv], i) => (
-                <tr key={i} className="border-t border-border">
+                <tr key={i} className="border-t border-border bg-white">
                   <td className="px-4 py-3 font-body text-sm font-medium text-foreground">{feat}</td>
                   <td className="px-4 py-3 text-center">
                     <span className="inline-flex items-center gap-1 font-body text-sm font-semibold text-primary">
@@ -189,24 +187,14 @@ const ProductsDieselPage = () => (
       </div>
     </section>
 
-    {/* CTA to Products */}
-    <section className="py-10">
-      <div className="container flex flex-col items-center text-center">
-        <h2 className="mb-2 font-heading text-2xl font-bold text-foreground">Proteja seu Investimento Agora</h2>
+    {/* 6. CTA & Products - VERDE PASTEL NO FUNDO */}
+    <section className="py-16 bg-[#e8f5e9]">
+      <div className="container flex flex-col items-center text-center mb-10">
+        <h2 className="mb-2 font-heading text-3xl font-bold text-foreground">Proteja seu Investimento Agora</h2>
         <p className="mb-4 font-body text-muted-foreground">Escolha a solução ideal para sua operação.</p>
         <ArrowDown className="h-6 w-6 animate-bounce text-primary" />
       </div>
-    </section>
-
-    {/* Products */}
-    <section className="bg-muted py-16">
       <div className="container">
-        <h2 className="mb-2 font-heading text-3xl font-bold text-foreground">
-          Soluções para <span className="text-gradient-emerald">Diesel</span>
-        </h2>
-        <p className="mb-10 max-w-xl font-body text-muted-foreground">
-          Do filtro individual à máquina de diálise para tanques — temos a solução certa para cada operação.
-        </p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {dieselProducts.map((p) => (
             <ProductCard key={p.name} {...p} category="diesel" />
@@ -215,7 +203,7 @@ const ProductsDieselPage = () => (
       </div>
     </section>
 
-    {/* Guarantee */}
+    {/* 7. Guarantee - PRETO FINAL */}
     <section className="border-t border-border bg-surface-dark py-16">
       <div className="container max-w-3xl text-center">
         <h2 className="mb-4 font-heading text-2xl font-bold text-surface-dark-foreground">

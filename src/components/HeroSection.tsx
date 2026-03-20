@@ -5,18 +5,21 @@ import filterAir from "@/assets/filter-air.png";
 import filterDiesel from "@/assets/filter-diesel.png";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] overflow-hidden">
+  // Adicionei bg-[#e8f5e9] para o verde pastel
+  <section className="relative min-h-[90vh] overflow-hidden bg-[#5f8962]">
     {/* Background */}
     <div className="absolute inset-0">
       <img src={heroEngineBg} alt="" className="h-full w-full object-cover opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+      {/* Ajustei o gradiente para suavizar com o verde pastel em vez do branco puro */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#e8f5e9]/60 to-[#e8f5e9]" />
     </div>
 
     <div className="container relative z-10 grid min-h-[90vh] grid-cols-1 gap-8 py-20 lg:grid-cols-2">
       {/* Left: Air Filters */}
       <Link
         to="/produtos/ar"
-        className="group flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-card/60 p-10 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10"
+        // Mantive o fundo dos cards branco com transparência (bg-white/70) para destacar no verde
+        className="group flex flex-col items-center justify-center rounded-2xl border border-white/50 bg-white/70 p-10 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10"
       >
         <Wind className="mb-4 h-10 w-10 text-primary" />
         <h2 className="mb-2 font-heading text-3xl font-bold text-foreground md:text-4xl">
@@ -27,7 +30,7 @@ const HeroSection = () => (
         </p>
         <img
           src={filterAir}
-          alt="Filtro de Ar EcoTech"
+          alt="Filtro de Ar Ecofiltro"
           className="h-56 w-auto object-contain transition-transform group-hover:scale-105 animate-float"
         />
         <span className="mt-6 rounded-full bg-primary px-6 py-2 font-heading text-sm font-semibold text-primary-foreground transition-colors group-hover:bg-accent">
@@ -38,7 +41,7 @@ const HeroSection = () => (
       {/* Right: Diesel Filters */}
       <Link
         to="/produtos/diesel"
-        className="group flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-card/60 p-10 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10"
+        className="group flex flex-col items-center justify-center rounded-2xl border border-white/50 bg-white/70 p-10 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10"
       >
         <Droplets className="mb-4 h-10 w-10 text-primary" />
         <h2 className="mb-2 font-heading text-3xl font-bold text-foreground md:text-4xl">
@@ -49,7 +52,7 @@ const HeroSection = () => (
         </p>
         <img
           src={filterDiesel}
-          alt="Filtro de Diesel EcoTech"
+          alt="Filtro de Diesel Ecofiltro"
           className="h-56 w-auto object-contain transition-transform group-hover:scale-105 animate-float"
           style={{ animationDelay: "0.5s" }}
         />

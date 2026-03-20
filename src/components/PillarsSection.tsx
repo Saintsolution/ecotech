@@ -28,15 +28,19 @@ const pillars = [
 ];
 
 const PillarsSection = () => (
-  <section className="py-20">
+  // Adicionei bg-[#1b4332] para o verde escuro
+  <section className="py-20 bg-[#1b4332]">
     <div className="container">
-      <span className="mb-4 block text-center font-heading text-xs font-semibold tracking-[0.2em] text-primary">
-        POR QUE ECOTECH
+      {/* Ajustei o texto de por que para text-emerald-200 */}
+      <span className="mb-4 block text-center font-heading text-xs font-semibold tracking-[0.2em] text-emerald-200">
+        POR QUE ECOFILTROS SERIOTEX
       </span>
-      <h2 className="mb-3 text-center font-heading text-3xl font-bold text-foreground md:text-4xl">
+      {/* Mudei o título para text-white */}
+      <h2 className="mb-3 text-center font-heading text-3xl font-bold text-white md:text-4xl">
         4 Pilares de uma <span className="text-gradient-emerald">Nova Era</span> em Filtragem
       </h2>
-      <p className="mx-auto mb-14 max-w-2xl text-center font-body text-muted-foreground">
+      {/* Mudei a descrição para text-emerald-50 */}
+      <p className="mx-auto mb-14 max-w-2xl text-center font-body text-emerald-50">
         Não somos apenas um filtro. Somos uma mudança de mentalidade — onde performance, economia e responsabilidade ambiental andam juntas.
       </p>
 
@@ -44,9 +48,10 @@ const PillarsSection = () => (
         {pillars.map((p, i) => (
           <div
             key={i}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+            // Mantive bg-card para o card continuar claro e contrastar no verde escuro
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card p-7 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
           >
-            {/* Decorative gradient corner */}
+            {/* Decorative gradient corner - ajuste para suavizar no card claro */}
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/5 transition-transform group-hover:scale-150" />
 
             <div className="relative">
@@ -63,8 +68,8 @@ const PillarsSection = () => (
         ))}
       </div>
 
-      {/* Bottom stat bar */}
-      <div className="mt-14 grid grid-cols-2 gap-4 rounded-2xl bg-surface-dark p-6 sm:grid-cols-4">
+      {/* Bottom stat bar - escureci o fundo para bg-[#0c1f17] */}
+      <div className="mt-14 grid grid-cols-2 gap-4 rounded-2xl bg-[#0c1f17] p-6 sm:grid-cols-4">
         {[
           { value: "0,5μm", label: "Filtragem de Ar" },
           { value: "99,9%", label: "Separação de Água" },

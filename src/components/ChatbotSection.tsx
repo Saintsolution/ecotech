@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, X, Loader2 } from "lucide-react";
 
-const INITIAL_MSG = "Olá! Sou o Sr. EcoTech, seu consultor técnico. Posso ajudar com informações sobre nossos filtros HARCAP, especificações técnicas e recomendações. Como posso ajudar?";
+const INITIAL_MSG = "Olá! Sou o Sr. EcofiltrosSeriotex, seu consultor técnico. Posso ajudar com informações sobre nossos filtros HARCAP, especificações técnicas e recomendações. Como posso ajudar?";
 
 const ChatbotSection = () => {
   const [open, setOpen] = useState(false);
@@ -60,7 +60,7 @@ const ChatbotSection = () => {
         className="fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 font-sans text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
       >
         <Bot className="h-5 w-5 text-emerald-400" />
-        Sr. EcoTech
+        Sr. EcofiltrosSeriotex
       </button>
     );
   }
@@ -71,7 +71,7 @@ const ChatbotSection = () => {
       <div className="flex items-center justify-between bg-emerald-600 px-4 py-3">
         <div className="flex items-center gap-2">
           <Bot className="h-5 w-5 text-white" />
-          <span className="font-sans text-sm font-bold text-white">Sr. EcoTech</span>
+          <span className="font-sans text-sm font-bold text-white">Sr. EcofiltrosSeriotex</span>
         </div>
         <button onClick={() => setOpen(false)}>
           <X className="h-5 w-5 text-white/70 hover:text-white" />

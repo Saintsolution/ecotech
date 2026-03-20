@@ -21,13 +21,13 @@ const Footer = () => (
       </div>
       <div>
         <h4 className="mb-3 font-heading text-sm font-bold text-foreground">Contato</h4>
-        <p className="font-body text-sm text-muted-foreground">contato@ecotech.com.br</p>
+        <p className="font-body text-sm text-muted-foreground">contato@Seriotex.com.br</p>
         <p className="font-body text-sm text-muted-foreground">WhatsApp: (00) 00000-0000</p>
       </div>
     </div>
     <div className="container mt-8 border-t border-border pt-4">
       <p className="text-center font-body text-xs text-muted-foreground">
-        © 2026 EcoTech. Todos os direitos reservados.
+        © 2026 Seriotex. Todos os direitos reservados.
       </p>
     </div>
   </footer>

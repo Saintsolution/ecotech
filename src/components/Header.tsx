@@ -18,11 +18,16 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary">
-            <span className="font-heading text-lg font-bold text-primary-foreground">E</span>
+          {/* Logo trocado: Sai a letra E, entra o seu placeholder.png */}
+          <div className="flex h-10 w-10 items-center justify-center">
+            <img 
+              src="/placeholder.png" 
+              alt="Ecofiltros Logo" 
+              className="h-full w-full object-contain"
+            />
           </div>
           <span className="font-heading text-xl font-bold tracking-wider text-foreground">
-            ECO<span className="text-primary">TECH</span>
+            Ecofiltros<span className="text-primary">SERIOTEX</span>
           </span>
         </Link>
 
