@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 10% 97%;
+    --foreground: 160 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 20% 10%;
+
+    --primary: 153 50% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 8% 90%;
+    --secondary-foreground: 160 20% 15%;
+
+    --muted: 160 8% 93%;
+    --muted-foreground: 160 10% 45%;
+
+    --accent: 153 60% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 12% 88%;
+    --input: 160 12% 88%;
+    --ring: 153 50% 36%;
+
+    --radius: 0.5rem;
+
+    --emerald-glow: 153 60% 45%;
+    --surface-dark: 160 20% 8%;
+    --surface-dark-foreground: 160 8% 90%;
+    --silver: 210 10% 70%;
+    --silver-light: 210 10% 85%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 153 50% 36%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 153 20% 95%;
+    --sidebar-accent-foreground: 160 20% 10%;
+    --sidebar-border: 160 12% 88%;
+    --sidebar-ring: 153 50% 36%;
+
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-emerald {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--emerald-glow)));
+  }
+  .bg-surface-dark {
+    background-color: hsl(var(--surface-dark));
+    color: hsl(var(--surface-dark-foreground));
+  }
+  .bg-emerald-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+  .glow-emerald {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+  .border-emerald-glow {
+    border-color: hsl(var(--emerald-glow) / 0.3);
+  }
+}
