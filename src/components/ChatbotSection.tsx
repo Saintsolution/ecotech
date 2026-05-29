@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, X, Loader2 } from "lucide-react";
 
-// 🎯 TEXTO DEFINITIVO ATUALIZADO COM O SIMULADOR
-const INITIAL_MSG = "Olá! Sou o Dr. Ecofiltros Seriotex, seu consultor e especialista em engenharia de frotas. Você quer saber exatamente quanto pode economizar por mês e por ano na sua operação com o nosso sistema? Para começarmos o seu cálculo, me diga: quantos caminhões você tem na frota e qual a KM média rodada por mês?";
+// 🎯 Nova saudação inicial focada em KM e Litros primeiro
+const INITIAL_MSG = "Olá! Sou o Dr. Ecofiltros Seriotex, seu consultor e especialista em engenharia de frotas. Você quer saber exatamente quanto pode economizar por mês e por ano na sua operação com o nosso sistema? Para começarmos o seu cálculo, me diga: qual a KM média rodada por mês e quantos litros de diesel o veículo consome em média?";
 
 const ChatbotSection = () => {
   const [open, setOpen] = useState(false);
@@ -23,15 +23,18 @@ const ChatbotSection = () => {
     if (!input.trim() || isLoading) return;
 
     const userMsg = input.trim();
-    setMessages((prev) => [...prev, { role: "user", content: userMsg }]);
+    const updatedMessages = [...messages, { role: "user" as const, content: userMsg }];
+    
+    setMessages(updatedMessages);
     setInput("");
     setIsLoading(true);
 
     try {
+      // 🧠 Enviamos o array completo de mensagens (updatedMessages) para a função
       const response = await fetch("/.netlify/functions/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg }),
+        body: JSON.stringify({ messages: updatedMessages }),
       });
 
       if (!response.ok) throw new Error("Erro na resposta do servidor");
