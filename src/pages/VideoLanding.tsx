@@ -40,8 +40,22 @@ const VideoLanding = () => {
   return (
     <HelmetProvider>
       <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center p-4 overflow-hidden">
+        
         <Helmet>
           <title>Apresentação Exclusiva - Ecofiltros Seriotex</title>
+          <meta property="og:title" content="Apresentação Exclusiva - Ecofiltros Seriotex" />
+          <meta property="og:description" content="Como frotistas estão reduzindo custos na operação." />
+          <meta property="og:type" content="video.other" />
+          <meta property="og:url" content="https://ecofiltros.netlify.app/apresentacao" />
+          
+          {/* 🎯 LINK DO SEU BANNER DE 500x600 EM PUBLIC */}
+          <meta property="og:image" content="https://ecofiltros.netlify.app/logotipo_seriotex.png" />
+          <meta property="og:image:secure_url" content="https://ecofiltros.netlify.app/logotipo_seriotex.png" />
+          <meta property="og:image:type" content="image/png" />
+          
+          {/* 📏 METADADOS EXATOS PARA O WHATSAPP NÃO DISTORCER O BANNER */}
+          <meta property="og:image:width" content="500" />
+          <meta property="og:image:height" content="600" />
         </Helmet>
 
         <div className="w-full max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900 relative">
