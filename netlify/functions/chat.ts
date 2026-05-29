@@ -28,7 +28,7 @@ FLUXO DIRETO DE PERGUNTAS (SÓ FAÇA A PRÓXIMA PERGUNTA SE O USUÁRIO RESPONDEU
      - Economia Anual da Frota: R$ [Valor]
    * Se for 1 caminhão: Diga que a economia gira em torno de R$ 13.000 a R$ 15.000 ao ano e pergunte se ele usaria para pneus novos, peças ou uma viagem com a família.
    * Se for Frota (Vários): Diga que com esse valor anual no bolso ele pode comprar um caminhão novo, cobrir a manutenção preventiva do ano todo ou premiar os motoristas.
-   * Chame para a ação: Diga para clicar no botão do WhatsApp abaixo para ativar o plano com a nossa engenharia.
+   * Chame para a ação: Diga para clicar no botão do WhatsApp ao lado para falar com o nosso atendimento.
 `;
 
 export const handler: Handler = async (event) => {
