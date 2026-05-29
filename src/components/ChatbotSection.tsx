@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, X, Loader2 } from "lucide-react";
 
-const INITIAL_MSG = "Olá! Sou o Sr. EcofiltrosSeriotex, seu consultor técnico. Posso ajudar com informações sobre nossos filtros HARCAP, especificações técnicas e recomendações. Como posso ajudar?";
+// 🎯 TEXTO DEFINITIVO ATUALIZADO COM O SIMULADOR
+const INITIAL_MSG = "Olá! Sou o Dr. Ecofiltros Seriotex, seu consultor e especialista em engenharia de frotas. Você quer saber exatamente quanto pode economizar por mês e por ano na sua operação com o nosso sistema? Para começarmos o seu cálculo, me diga: quantos caminhões você tem na frota e qual a KM média rodada por mês?";
 
 const ChatbotSection = () => {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,6 @@ const ChatbotSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll para a última mensagem
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -28,7 +28,6 @@ const ChatbotSection = () => {
     setIsLoading(true);
 
     try {
-      // Chamada para a sua Netlify Function
       const response = await fetch("/.netlify/functions/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -60,7 +59,7 @@ const ChatbotSection = () => {
         className="fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 font-sans text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
       >
         <Bot className="h-5 w-5 text-emerald-400" />
-        Sr. EcofiltrosSeriotex
+        Dr. Ecofiltros Seriotex
       </button>
     );
   }
@@ -71,7 +70,7 @@ const ChatbotSection = () => {
       <div className="flex items-center justify-between bg-emerald-600 px-4 py-3">
         <div className="flex items-center gap-2">
           <Bot className="h-5 w-5 text-white" />
-          <span className="font-sans text-sm font-bold text-white">Sr. EcofiltrosSeriotex</span>
+          <span className="font-sans text-sm font-bold text-white">Dr. Ecofiltros Seriotex</span>
         </div>
         <button onClick={() => setOpen(false)}>
           <X className="h-5 w-5 text-white/70 hover:text-white" />
@@ -109,7 +108,7 @@ const ChatbotSection = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Pergunte sobre tecnologia HARCAP..."
+            placeholder="Digite seus dados operacionais aqui..."
             className="flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
             disabled={isLoading}
           />
