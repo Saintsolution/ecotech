@@ -13,6 +13,7 @@ import ProductsAirPage from "./pages/ProductsAir";
 import ProductsDieselPage from "./pages/ProductsDiesel";
 import PartnerPage from "./pages/Partner";
 import AdminPage from "./pages/Admin";
+import VideoLanding from "./pages/VideoLanding"; // 👈 Adicionado o import da sua página de vídeo
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/produtos/diesel" element={<ProductsDieselPage />} />
           <Route path="/parceiro" element={<PartnerPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/apresentacao" element={<VideoLanding />} /> {/* 👈 Adicionada a sua rota aqui */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
