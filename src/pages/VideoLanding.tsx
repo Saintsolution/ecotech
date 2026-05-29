@@ -1,15 +1,35 @@
 import { useState, useEffect } from "react";
-import { MessageSquare, ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const VideoLanding = () => {
   const [showButton, setShowButton] = useState(false);
 
-  // ⏱️ CONFIGURE AQUI: Em qual segundo do vídeo o botão "CLIQUE AQUI" deve surgir?
-  // Exemplo: Se você faz a oferta aos 2 minutos de vídeo, coloque 120 (2 * 60).
-  // Vou deixar 10 segundos para você testar aí. Mude para o tempo que quiser!
+  // ⏱️ CONFIGURE AQUI: Em qual segundo do vídeo o botão deve surgir?
+  // Vou deixar 10 segundos para você testar aí. Mude para o tempo da sua oferta!
   const tempoAparecerSegundos = 10; 
 
   useEffect(() => {
+    // Configurações de Meta Tags para o Preview do WhatsApp
+    document.title = "Apresentação Exclusiva - Ecofiltros Seriotex";
+    
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', 'Como frotistas estão reduzindo até R$ 11.000/ano em manutenção por veículo.');
+
+    let metaImage = document.querySelector('meta[property="og:image"]');
+    if (!metaImage) {
+      metaImage = document.createElement('meta');
+      metaImage.setAttribute('property', 'og:image');
+      document.head.appendChild(metaImage);
+    }
+    // Imagem do frame/player de vídeo para o card do WhatsApp
+    metaImage.setAttribute('content', 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80');
+
+    // Timer para exibição do botão retido
     const timer = setTimeout(() => {
       setShowButton(true);
     }, tempoAparecerSegundos * 1000);
@@ -17,7 +37,7 @@ const VideoLanding = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Código de incorporação oficial do seu vídeo do Wistia
+  // Link oficial do seu vídeo hospedado no Wistia
   const wistiaEmbedUrl = "https://fast.wistia.net/embed/iframe/sv7ycah0yz?videoFoam=true";
 
   return (
@@ -43,7 +63,7 @@ const VideoLanding = () => {
           Assista à apresentação abaixo para entender a tecnologia HARCAP.
         </p>
 
-        {/* Container do Wistia (16:9 Automático) */}
+        {/* Container do Wistia */}
         <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black mb-10 relative">
           <iframe
             src={wistiaEmbedUrl}
@@ -54,27 +74,21 @@ const VideoLanding = () => {
           ></iframe>
         </div>
 
-        {/* 🎯 O BOTÃO SOLICITADO: Azul Escuro com Bordas Laranjas Bem Fechadas */}
+        {/* 🎯 BOTÃO SOLICITADO: Azul Escuro com Bordas Laranjas levando ao site principal */}
         <div className="w-full max-w-md min-h-[80px]">
           {showButton ? (
-            <div className="flex flex-col items-center gap-3 transition-all duration-500 ease-out transform translate-y-0 opacity-100">
+            <div className="flex flex-col items-center gap-3 transition-all duration-500 ease-out">
               <a
-                href="https://wa.me/55XXXXXXXXXXX?text=Olá!%20Assisti%20a%20apresentação%20e%20quero%20saber%20mais%20sobre%20os%20filtros."
-                target="_blank"
-                rel="noopener noreferrer"
-                // !bg-[#0b2240] (Azul Escuro) | border-4 border-[#f97316] (Bordas Laranjas) | rounded-xl (Fechado)
-                className="group flex w-full items-center justify-center gap-2 rounded-xl !bg-[#0b2240] border-4 border-[#f97316] px-8 py-4 font-heading text-xl font-black text-white shadow-2xl transition-all hover:scale-[1.03] hover:bg-[#122e54] active:scale-95"
+                href="https://ecofiltros.netlify.app/" // 👈 Ajustado para o seu link atual
+                className="group flex w-full items-center justify-center gap-3 rounded-xl !bg-[#0b2240] border-4 border-[#f97316] px-8 py-4 font-heading text-xl font-black text-white shadow-2xl transition-all hover:scale-[1.03] hover:bg-[#122e54] active:scale-95"
               >
-                <MessageSquare className="h-5 w-5 text-[#f97316]" />
+                <Play className="h-5 w-5 text-[#f97316] fill-[#f97316]" />
                 CLIQUE AQUI
                 <ArrowRight className="h-5 w-5 text-[#f97316] transition-transform group-hover:translate-x-1" />
               </a>
-              <a 
-                href="/"
-                className="text-sm font-body text-emerald-400/80 hover:text-emerald-400 underline transition-colors"
-              >
-                Conhecer todos os produtos no site
-              </a>
+              <p className="text-xs font-body text-silver/60">
+                Clique acima para acessar nossa linha completa de produtos
+              </p>
             </div>
           ) : (
             <p className="text-xs font-body text-silver/40 italic animate-pulse">
