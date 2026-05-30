@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, X, Loader2 } from "lucide-react";
 
-// 🎯 Nova saudação inicial focada em KM e Litros primeiro
-const INITIAL_MSG = "Olá! Sou o Dr. Ecofiltros Seriotex, seu consultor e especialista em engenharia de frotas. Você quer saber exatamente quanto pode economizar por mês e por ano na sua operação com o nosso sistema? Para começarmos o seu cálculo, me diga: qual a KM média rodada por mês e quantos litros de diesel o veículo consome em média?";
+// 🎯 CORREÇÃO DEFINITIVA: Agora sim, isolado e perguntando APENAS a quilometragem primeiro!
+const INITIAL_MSG = "Olá! Sou o Dr. Ecofiltros Seriotex, seu consultor e especialista em engenharia de frotas. Você quer saber exatamente quanto pode economizar por mês e por ano na sua operação com o nosso sistema? Para começarmos o seu cálculo, me diga: quantos quilômetros o seu veículo roda em média por mês?";
 
 const ChatbotSection = () => {
   const [open, setOpen] = useState(false);
